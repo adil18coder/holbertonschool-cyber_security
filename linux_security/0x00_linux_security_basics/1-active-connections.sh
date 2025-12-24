@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo netstat -tanp
+sudo ss -tanp
