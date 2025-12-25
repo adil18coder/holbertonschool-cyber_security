@@ -1,2 +1,2 @@
 #!/bin/bash
-whois holbertonschool.com
+whois "$1" | awk -F': ' '/^(Registrant|Admin|Tech)/{print $1","$2}'
