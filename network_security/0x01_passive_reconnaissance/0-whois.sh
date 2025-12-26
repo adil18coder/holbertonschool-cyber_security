@@ -1,2 +1,2 @@
 #!/bin/bash
-whois "$1" | awk '...' > "$1.csv"
+<il,"substr($0,index($0,$3))}' > "$1.csv"
