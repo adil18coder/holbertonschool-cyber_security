@@ -1,1 +1,1 @@
-udp.dstport == 40125 and udp.len == 0
+udp.dstport == 40125 and udp.len == 7
