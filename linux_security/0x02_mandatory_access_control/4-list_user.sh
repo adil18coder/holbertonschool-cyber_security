@@ -1,2 +1,2 @@
 #!/bin/bash
-getseuser
+semanage login -l | grep user
