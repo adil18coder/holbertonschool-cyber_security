@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+encoded="$1"
+
+encoded="${encoded#{xor}}"
+
+decoded=$(echo "$encoded" | base64 --decode 2>/dev/null | \
+  perl -ne 'foreach $c (split //) { printf "%s", chr(ord($c) ^ 0x5f) }')
+
+echo "$decoded"
