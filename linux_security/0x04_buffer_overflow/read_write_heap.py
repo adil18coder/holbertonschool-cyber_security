@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Heap string search and replace in a running process memory"""
+
 import sys
 
 if len(sys.argv) != 4:
@@ -12,10 +13,10 @@ replace = sys.argv[3].encode()
 if len(replace) > len(search):
     sys.exit(1)
 
-# heap region tap
 heap_start = None
 heap_end = None
 
+# heap region tap
 with open(f"/proc/{pid}/maps", "r") as f:
     for line in f:
         if "[heap]" in line:
@@ -28,7 +29,7 @@ with open(f"/proc/{pid}/maps", "r") as f:
 if heap_start is None:
     sys.exit(1)
 
-# memory aç və dəyiş
+# memory oxu və dəyiş
 with open(f"/proc/{pid}/mem", "r+b", 0) as mem:
     mem.seek(heap_start)
     heap = mem.read(heap_end - heap_start)
