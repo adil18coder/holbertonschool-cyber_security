@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Heap string search and replace in a running process memory"""
 import sys
 
 if len(sys.argv) != 4:
