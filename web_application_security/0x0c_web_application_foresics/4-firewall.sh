@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -E "iptables .* -A |ufw allow|firewall-cmd .*--add" auth.log | wc -l
+grep -Ei "add.*rule|iptables.*-A|ufw allow|--add-port" auth.log | wc -l
