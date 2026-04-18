@@ -1,3 +1,3 @@
 #!/bin/bash
-# Uğurlu giriş etmiş unikal IP-lərin sayını hesablayır
-grep "Accepted" auth.log | awk '{for(i=1;i<=NF;i++) if($i=="from") print $(i+1)}' | sort | uniq | wc -l
+# auth.log faylındakı bütün uğurlu girişlərin unikal IP sayını tapır
+grep "Accepted" auth.log | grep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | sort -u | wc -l
