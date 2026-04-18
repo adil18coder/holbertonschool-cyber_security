@@ -1,2 +1,3 @@
 #!/bin/bash
-grep -Ei "add.*rule|iptables.*-A|ufw allow|--add-port" auth.log | wc -l
+# auth.log faylında firewall qaydalarının əlavə edilməsi sayını tapır
+grep "ufw" auth.log | grep "BLOCK" | wc -l
