@@ -1,2 +1,2 @@
 #!/bin/bash
-comm -12 <(tail -n 1000 auth.log | grep "Failed password" | sed -n 's/.*from \([0-9.]*\).*/\1/p' | sort -u) <(tail -n 1000 auth.log | grep "Accepted password" | sed -n 's/.*from \([0-9.]*\).*/\1/p' | sort -u) | wc -l
+tail -n 1000 auth.log | grep "Accepted" | awk '{for(i=1;i<=NF;i++) if ($i=="from") print $(i+1)}' | sort -u | wc -l
